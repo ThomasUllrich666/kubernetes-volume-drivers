@@ -61,7 +61,7 @@ mount() {
 
 	#mounting
 	echo "`date` EXEC: /bin/mount -t cifs ${VOLUME_SRC} ${MNTPATH}" >>$LOG
-	
+	echo "`date` [DEBUG] EXEC: /bin/mount -t cifs ${VOLUME_SRC} ${MNTPATH}" -o ${ALL_OPTIONS} >>$LOG	
 	/bin/mount -t cifs "${VOLUME_SRC}" "${MNTPATH}" -o "${ALL_OPTIONS}" >>$LOG 2>&1
 	if [ $? -ne 0 ]; then
 		errorLog=`tail -n 1 "${LOG}"`
