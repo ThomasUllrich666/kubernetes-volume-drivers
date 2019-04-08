@@ -4,7 +4,7 @@ LOG="/var/log/smb-flexvol-installer.log"
 VER="1.0.2"
 target_dir="${TARGET_DIR}"
 
-echo "install jq,cifs-utils packages ..."
+echo "install jq,cifs-utils packages ..." >> $LOG
 apt update
 apt-get install jq cifs-utils -y
 
