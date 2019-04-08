@@ -21,13 +21,13 @@ spec:
         - name: imsecret
       containers:
       - name: smb-flexvol-installer
-        image: de.icr.io/im_factory/smb-flexvolume:5
+        image: de.icr.io/im_factory/smb-flexvolume:7
         imagePullPolicy: Always
         securityContext:
           privileged: true
         volumeMounts:
         - name: volplugins
-          mountPath: /etc/kubernetes/volumeplugins/
+          mountPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
         - name: varlog
           mountPath: /var/log/
       volumes:
@@ -36,7 +36,7 @@ spec:
           path: /var/log/
       - name: volplugins
         hostPath:
-          path: /etc/kubernetes/volumeplugins/
+          path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
           type: DirectoryOrCreate
       nodeSelector:
         beta.kubernetes.io/os: linux
