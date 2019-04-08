@@ -21,7 +21,7 @@ spec:
         - name: imsecret
       containers:
       - name: smb-flexvol-installer
-        image: de.icr.io/im_factory/smb-flexvolume:4
+        image: de.icr.io/im_factory/smb-flexvolume:5
         imagePullPolicy: Always
         securityContext:
           privileged: true

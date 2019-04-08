@@ -10,7 +10,7 @@ apt-get install jq cifs-utils -y
 
 echo "begin to install smb FlexVolume driver ${VER} ..." >> $LOG
 
-if [[ -z "${target_dir}" ]]; then
+if [ -z "${target_dir}" ]; then
   target_dir="/etc/kubernetes/volumeplugins"
 fi
 
