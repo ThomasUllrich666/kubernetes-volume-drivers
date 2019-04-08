@@ -16,5 +16,5 @@ spec:
       secretRef:
         name: smbcreds	
       options:
-        source: "//STORAGE-ACCOUNT.file.core.windows.net/SHARE-NAME"
-        mountoptions: "vers=3.0,dir_mode=0777,file_mode=0777"
+        source: "//imfactory.file.core.windows.net/integrationtest-workpieceinporter"
+        mountoptions: "vers=3.0,dir_mode=0777,file_mode=0777,sec=ntlmssp"
