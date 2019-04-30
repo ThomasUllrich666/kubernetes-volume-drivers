@@ -30,10 +30,15 @@ spec:
           mountPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
         - name: varlog
           mountPath: /var/log/
+        - name: sbin
+          mountPath: /sbin/
       volumes:
+      - name: sbin
+        hostPath:
+          path: /sbin/
       - name: varlog
         hostPath:
-          path: /var/log/
+          path: /var/log/          
       - name: volplugins
         hostPath:
           path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
